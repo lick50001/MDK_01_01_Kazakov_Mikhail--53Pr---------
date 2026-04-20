@@ -17,7 +17,7 @@ namespace ReportGeneration_Kazakov.Classes
         {
             List<EvaluationContext> allEvalut = new List<EvaluationContext>();
             MySqlConnection conn = Connection.OpenConnection();
-            MySqlDataReader BDWvalut = Connection.Query("SELECT * FROM evalution ORDER BY Name;", conn);
+            MySqlDataReader BDWvalut = Connection.Query("SELECT * FROM evaluation;", conn);
             while (BDWvalut.Read())
             {
                 allEvalut.Add(new EvaluationContext(

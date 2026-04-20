@@ -17,7 +17,7 @@ namespace ReportGeneration_Kazakov.Classes
         {
             List<DisciplineContext> allDisc = new List<DisciplineContext>();
             MySqlConnection connection = Connection.OpenConnection();
-            MySqlDataReader BDDiscip = Connection.Query("SELECT * FROM discilpine ORDER BY Name;", connection);
+            MySqlDataReader BDDiscip = Connection.Query("SELECT * FROM discipline ORDER BY Name;", connection);
             while (BDDiscip.Read())
             {
                 allDisc.Add(new DisciplineContext(

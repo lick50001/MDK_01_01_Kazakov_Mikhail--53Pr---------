@@ -19,7 +19,7 @@ namespace ReportGeneration_Kazakov.Classes
         {
             List<GroupContext> allGroups = new List<GroupContext>();
             MySqlConnection conn = Connection.OpenConnection();
-            MySqlDataReader BDWGroups = Connection.Query("SELECT * FROM group ORDER BY Name;", conn);
+            MySqlDataReader BDWGroups = Connection.Query("SELECT * FROM `group` ORDER BY Name", conn);
             while (BDWGroups.Read())
             {
                 allGroups.Add(new GroupContext(

@@ -77,5 +77,14 @@ namespace ReportGeneration_Kazakov.Pages
             CreateStudents(SearchStudent.FindAll(x =>
                 $"{x.Lastname} {x.Firstname}".ToLower().Contains(TBFIO.Text.ToLower())));
         }
+
+        private void ReportGeneration(object sender, RoutedEventArgs e)
+        {
+            if (CBGroups.SelectedIndex != CBGroups.Items.Count - 1)
+            {
+                int IdGroup = GrpCont.Find(x => x.Name == CBGroups.SelectedItem).Id;
+                Classes.Common.Report.Group(IdGroup, this);
+            }
+        }
     }
 }

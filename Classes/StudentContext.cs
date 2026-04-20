@@ -17,7 +17,7 @@ namespace ReportGeneration_Kazakov.Classes
         {
             List<StudentContext> allStud = new List<StudentContext>();
             MySqlConnection conn = Connection.OpenConnection();
-            MySqlDataReader BDWStud = Connection.Query("SELECT * FROM group ORDER BY Name;", conn);
+            MySqlDataReader BDWStud = Connection.Query("SELECT * FROM student ORDER BY LastName;", conn);
             while (BDWStud.Read())
             {
                 allStud.Add(new StudentContext(
